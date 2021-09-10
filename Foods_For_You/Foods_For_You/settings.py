@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'admins.apps.AdminsConfig',
     'accounts.apps.AccountsConfig',
-    'instant_food.apps.Instant_foodConfig',
+    'instant_food.apps.InstantFoodConfig',
     'bootstrapform',
 ]
 
@@ -81,7 +81,7 @@ WSGI_APPLICATION = 'Foods_For_You.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'instant_meals',
+        'NAME': 'instant_food',
         'USER': 'root',
         'PASSWORD': '',
         'HOST': 'localhost',
