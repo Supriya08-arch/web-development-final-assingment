@@ -7,20 +7,20 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link {{activate_catagoery_user}}"
-             aria-current="page" href="/meals/get_catagoery_user">Catagoery</a>
+          <a class="nav-link {{activate_Category}}"
+             aria-current="page" href="/instant_food/get_Category">Category</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link {{activate_meals_user}}" href="/meals/get_meals_user">Meals</a>
+          <a class="nav-link {{activate_food_user}}" href="/food/get_food_user">Food</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link {{activate_menu}}" href="/meals/menu">Menu</a> </li>
+          <a class="nav-link {{activate_menu}}" href="/food/menu">Menu</a> </li>
           {% if user.is_authenticated %}
          <li class="nav-item">
-          <a class="nav-link {{activate_my_cart}}" href="/meals/mycart">My Cart</a>
+          <a class="nav-link {{activate_my_cart}}" href="/food/mycart">My Cart</a>
         </li>
          <li class="nav-item">
-          <a class="nav-link {{activate_myorder}}" href="/meals/my_order">My Orders</a>
+          <a class="nav-link {{activate_myorder}}" href="/food/my_order">My Orders</a>
         </li>
           <li class="nav-item">
           <a class="nav-link" href="/logout">Logout</a>
