@@ -1,0 +1,49 @@
+{% extends 'layout-admin.html' %}
+{% block title %}
+<title>All Meals</title>
+{% endblock%}
+
+{% block main_content %}
+<div class="container">
+    <div class="row">
+
+
+        <div class="col-md-10 offset-md-1">
+            <h1 class="text-center">All Meals</h1>
+            {% include 'messages.html' %}
+
+            <div class="card py-2 px-2">
+                <a class="btn btn-primary btn-sm ms-auto"
+                href="/meals/meals_form"
+                >Add New meals</a>
+                <table class="table-striped">
+
+                    <tr>
+                        <th>Meals Name</th>
+                        <th>Price</th>
+                        <th>Image</th>
+                        <th>Category</th>
+                        <th>Actions</th>
+                    </tr>
+                    {% for i in meals %}
+                    <tr>
+
+                        <td> {{ i.meals_name }}</td>
+                        <td> {{ i.meals_price }}</td>
+                        <td> {{ i.catagoery.catagoery_name }}</td>
+                        <td><img src="/{{i.meals_image}}" width="200"> </td>
+                        <td><a class="btn btn-primary btn-sm" href="/meals/update_meals/{{i.id}}">Edit</a> &nbsp;
+                            <a class="btn btn-danger btn-sm"
+                               href="/meals/delete_meals/{{i.id}}"
+                               onclick="return confirm('Are you sure want to delete this food?')" >Delete</a></td>
+
+                    </tr>
+                    {% endfor %}
+
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
