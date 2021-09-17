@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block title %}
+<title>Menu</title>
+{% endblock title %}
+
+{% block main_content %}
+<h1>All Categories With Meals</h1>
+<div class="container">
+    <div class="row justify-content-around">
+        {% for i in categories %}
+        <h1>{{i.category_name}}</h1>
+          <div class="Meals_image">
+       <img src="/{{i.category_image}}" width="200"/>
+            </div>
+        {% for j in i.meals_set.all %}
+        <div class="menu-items d-flex justify-content-between">
+            <div class="meals_name">
+                <p>{{j.meals_name}}</p>
+            </div>
+            <div class="meal_price">
+        Rs. {{j.meal_price }}
+            </div>
+
+        </div>
+        {% endfor %}
+
+        {% endfor %}
+    </div>
+</div>
+{% endblock main_content %}
