@@ -1,0 +1,41 @@
+{% extends 'layout.html' %}
+{% block title %}
+<title>My Cart </title>
+{% endblock%}
+
+{% block main_content %}
+<div class="container">
+    <div class="row">
+
+        <div class="col-md-10 offset-md-1">
+            <h1 class="text-center">My Cart</h1>
+            {% include 'messages.html' %}
+            <div class="card py-2 px-2">
+                <table class="table-striped">
+                    <tr>
+                        <th>Meals Name</th>
+                        <th>Meals Price</th>
+                        <th>Date Added</th>
+                        <th>Actions</th>
+
+                    </tr>
+                    {% for i in items %}
+                    <tr>
+                        <td> {{ i.meals.Meals_name }}</td>
+                        <td> {{ i.meals.Meals_price }}</td>
+                        <td> {{ i.created_date }}</td>
+                        <td><a class="btn btn-primary btn-sm" href="/Meals/remove_cart_item/{{i.id}}">Remove</a> &nbsp;
+                            <a class="btn btn-danger btn-sm"
+                               href="/Meals/order_form/{{i.food.id}}/{{i.id}}"
+                               onclick="return confirm('Are you sure want to order this meal?')" >Order</a></td>
+
+                    </tr>
+                    {% endfor %}
+
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
