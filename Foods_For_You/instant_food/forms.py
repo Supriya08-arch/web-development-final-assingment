@@ -10,13 +10,13 @@ class CatagoeryForm(ModelForm):
 
 
 
-# class FoodForm(ModelForm):
-#     class Meta:
-#         model = Food
-#         fields = "__all__"
-#
+class FoodForm(ModelForm):
+    class Meta:
+        model = Food
+        fields = "__all__"
 
-# class OrderForm(ModelForm):
-#     class Meta:
-#         model = Order
-#         fields = ['quantity', 'contact_no', 'contact_address', 'payment_method']
+
+class OrderForm(ModelForm):
+    class Meta:
+        model = Order
+        fields = ['quantity', 'contact_no', 'contact_address', 'payment_method']
